@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0108289-16f0-4154-a612-4ebb7df26f08" name="Changes" comment="firebase">
-      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
+    <list default="true" id="a0108289-16f0-4154-a612-4ebb7df26f08" name="Changes" comment="color">
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
       <updated>1664561416802</updated>
       <workItem from="1664561417945" duration="2462000" />
       <workItem from="1664563888262" duration="8809000" />
-      <workItem from="1664573059212" duration="16000" />
+      <workItem from="1664573059212" duration="159000" />
     </task>
     <task id="LOCAL-00001" summary="firebase">
       <created>1664572652105</created>
@@ -75,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664572652106</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="color">
+      <created>1664573125256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664573125256</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +101,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="firebase" />
+    <MESSAGE value="color" />
+    <option name="LAST_COMMIT_MESSAGE" value="color" />
   </component>
 </project>

@@ -12,7 +12,7 @@
     import {BinaryTreeNode, drawBinaryTree, setTheme} from 'binary-tree-visualizer';
 
     // Init a new root binary tree node
-    let text = "(a+b)⋅c";
+    let text = "-(a+b)⋅(10-3)";
 
     $: {
         let selectionPos = inputEl ? inputEl.selectionStart : text.length;
@@ -180,7 +180,7 @@
 <pre>{assemblyZeroAddress}</pre>
 <div id="usage">
     <h3>How to use?</h3>
-    <p>Supported operators: +, - (binary), - (unary), * /</p>
+    <p>Supported operators: +, - (binary), − (unary), * /</p>
     <p>You can enter variables and numbers. Implicit multiplication is not yet implemented (like 3y).</p>
     <p>Feature requests are welcomed at <a href="mailto:ambrus@johetajava.hu">ambrus@johetajava.hu</a> or through github
         issues.</p>
