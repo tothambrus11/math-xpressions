@@ -188,7 +188,7 @@
 
 <footer style="margin-top: 64px">
     &copy; 2022 Ambrus Tóth<br>
-    <a href="https://github.com/tothambrus11/propositional-logic/" style="color: #1f5219">Source Code on Github</a>
+    <a href="https://github.com/tothambrus11/math-xpressions" style="color: #1f5219">Source Code on Github</a>
 </footer>
 
 <style>

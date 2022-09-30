@@ -1,1 +1,1 @@
-# Propositional Logic AST Parser and Evaluator
+# Math Parser and Prefix/Infix Notation Generator
