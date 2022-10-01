@@ -146,7 +146,7 @@ function nodeifyExpression(expression: Expression, subExpStart: number, subExpEn
     for (let i = subExpStart; i < subExpEnd; i++) {
         let expItem = expression[i];
         if (!(expItem instanceof Array) && (expItem.tokenType === TokenType.UnaryOperator || expItem.tokenType === TokenType.BinaryOperator)) {
-            if (precedences[(expItem as OperatorToken).opType] > maxPrecedence) {
+            if (precedences[(expItem as OperatorToken).opType] >= maxPrecedence) {
                 maxPrecedence = precedences[(expItem as OperatorToken).opType];
                 mostMainConnective = expItem as OperatorToken;
                 mostMainConnectiveIndex = i;

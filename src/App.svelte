@@ -37,36 +37,36 @@
 
         function traversePostfix(node: ASTNode): string {
             if (node instanceof BinaryConnectiveNode)
-                return traversePostfix(node.childLeft) + traversePostfix(node.childRight) + node.toString();
+                return traversePostfix(node.childLeft) + traversePostfix(node.childRight) + node.toString() + ' ';
             if (node instanceof UnaryConnectiveNode)
-                return traversePostfix(node.child) + node.toString();
-            if (node instanceof VariableNode) return node.toString();
-            if (node instanceof NumberConstantNode) return '(' + node.toString() + ')';
+                return traversePostfix(node.child) + node.toString() + ' ';
+            if (node instanceof VariableNode) return node.toString() + ' ';
+            if (node instanceof NumberConstantNode) return node.toString() + ' ';
 
             throw new InvalidExpressionError();
         }
 
         try {
-            postfixNotation = traversePostfix(ast);
+            postfixNotation = traversePostfix(ast).trimEnd();
         } catch (e) {
             postfixNotation = "Invalid Expression";
         }
 
         function traversePrefix(node: ASTNode): string {
             if (node instanceof BinaryConnectiveNode)
-                return node.toString() + traversePrefix(node.childLeft) + traversePrefix(node.childRight);
+                return ' ' + node.toString() + traversePrefix(node.childLeft) + traversePrefix(node.childRight);
             if (node instanceof UnaryConnectiveNode)
-                return node.toString() + traversePrefix(node.child);
+                return ' ' + node.toString() + traversePrefix(node.child);
             if (node instanceof VariableNode)
-                return node.toString();
+                return ' ' + node.toString();
             if (node instanceof NumberConstantNode)
-                return '(' + node.toString() + ')';
+                return ' ' + node.toString();
 
             throw new InvalidExpressionError();
         }
 
         try {
-            prefixNotation = traversePrefix(ast);
+            prefixNotation = traversePrefix(ast).trimStart();
         } catch (e) {
             prefixNotation = "Invalid Expression";
         }
@@ -79,9 +79,9 @@
                     result += 'ADDQ\n';
                 } else if (node instanceof SubtractionNode) {
                     result += 'SUBQ\n';
-                } else if(node instanceof MultiplicationNode){
+                } else if (node instanceof MultiplicationNode) {
                     result += 'MULQ\n';
-                } else if(node instanceof DivisionNode){
+                } else if (node instanceof DivisionNode) {
                     result += 'DIVQ\n';
                 } else {
                     throw new InvalidExpressionError();
@@ -90,7 +90,7 @@
             }
             if (node instanceof UnaryConnectiveNode) {
                 if (node instanceof UnaryMinusNode)
-                    return "PUSHQ $0\n"+traverseAssembly(node.child) + "SUBQ\n";
+                    return "PUSHQ $0\n" + traverseAssembly(node.child) + "SUBQ\n";
 
             }
             if (node instanceof VariableNode || node instanceof NumberConstantNode) return `PUSHQ $${node.toString()}\n`;
@@ -102,6 +102,23 @@
             assemblyZeroAddress = traverseAssembly(ast);
         } catch (e) {
             assemblyZeroAddress = "Invalid Expression";
+        }
+
+        function traverseStefanOrder(node: ASTNode): string {
+            if (node instanceof BinaryConnectiveNode)
+                return traversePostfix(node.childRight) + traversePostfix(node.childLeft) + node.toString() + ' ';
+            if (node instanceof UnaryConnectiveNode)
+                return traversePostfix(node.child) + node.toString() + ' ';
+            if (node instanceof VariableNode) return node.toString() + ' ';
+            if (node instanceof NumberConstantNode) return node.toString() + ' ';
+
+            throw new InvalidExpressionError();
+        }
+
+        try {
+            stefanNotation = traverseStefanOrder(ast).trimEnd();
+        } catch (e) {
+            stefanNotation = "Invalid Expression";
         }
 
         if (canvasEl) drawTree(ast)
@@ -155,6 +172,7 @@
 
     let postfixNotation = "";
     let prefixNotation = "";
+    let stefanNotation = "";
 
     let inputEl: HTMLInputElement;
     let canvasEl: HTMLCanvasElement;
@@ -173,17 +191,27 @@
 <div>Postfix notation:
     <pre style="display: inline-block">{postfixNotation}</pre>
 </div>
+<div>Stefan notation<a href="#stefan">*</a>:
+    <pre style="display: inline-block">{stefanNotation}</pre>
+</div>
 
 <canvas bind:this={canvasEl} style="max-width: 100%; box-sizing: border-box"></canvas>
 
 <div>Assembly code with zero address instructions:</div>
 <pre>{assemblyZeroAddress}</pre>
-<div id="usage">
+<div class="container">
     <h3>How to use?</h3>
     <p>Supported operators: +, - (binary), − (unary), * /</p>
     <p>You can enter variables and numbers. Implicit multiplication is not yet implemented (like 3y).</p>
     <p>Feature requests are welcomed at <a href="mailto:ambrus@johetajava.hu">ambrus@johetajava.hu</a> or through github
         issues.</p>
+</div>
+
+<div class="container">
+    <h3>Notes</h3>
+    <p id="stefan">Stefan notation is a notation where the operator is written after the operands and we traverse the
+        right operand first. For example, 3 + 4 is
+        written as 4 3 +.</p>
 </div>
 
 <footer style="margin-top: 64px">
@@ -248,7 +276,7 @@
     align-items: center;
   }
 
-  #usage {
+  .container {
     padding: 16px 32px;
     margin: 32px 0;
     border: 1px solid var(--secondary-text);

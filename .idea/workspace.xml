@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0108289-16f0-4154-a612-4ebb7df26f08" name="Changes" comment="unary minus doc">
+    <list default="true" id="a0108289-16f0-4154-a612-4ebb7df26f08" name="Changes" comment="title, link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,9 @@
       <updated>1664561416802</updated>
       <workItem from="1664561417945" duration="2462000" />
       <workItem from="1664563888262" duration="8809000" />
-      <workItem from="1664573059212" duration="596000" />
+      <workItem from="1664573059212" duration="835000" />
+      <workItem from="1664609850616" duration="48000" />
+      <workItem from="1664624058062" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="firebase">
       <created>1664572652105</created>
@@ -92,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664573240829</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="title, link">
+      <created>1664573666998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664573666998</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +121,7 @@
     <MESSAGE value="firebase" />
     <MESSAGE value="color" />
     <MESSAGE value="unary minus doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="unary minus doc" />
+    <MESSAGE value="title, link" />
+    <option name="LAST_COMMIT_MESSAGE" value="title, link" />
   </component>
 </project>
