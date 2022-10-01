@@ -235,41 +235,6 @@
   }
 
 
-  #grid > * {
-    font-size: 1.2em;
-  }
-
-  #grid {
-    display: grid;
-    justify-content: flex-start;
-    gap: 0;
-    grid-auto-rows: 40px;
-  }
-
-  .exp-letter {
-    padding: 4px;
-    box-sizing: border-box;
-    background-color: var(--header-bg);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-  .exp-var {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--var-bg);
-  }
-
-  .var-value {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   #header {
     display: flex;
     margin-bottom: 16px;
